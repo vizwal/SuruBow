@@ -11,11 +11,11 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="bows.html">Bows</a>
-    <a href="scrunchies.html">Scrunchies</a>
-    <a href="offers.html">Offers</a>
-    <a href="contact.html">Contact Us</a>
+    <a href="index">Home</a>
+    <a href="bows">Bows</a>
+    <a href="scrunchies">Scrunchies</a>
+    <a href="offers">Offers</a>
+    <a href="contact">Contact Us</a>
   </nav>
 
   <main>
