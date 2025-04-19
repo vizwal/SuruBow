@@ -11,17 +11,17 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="bows.html">Bows</a>
-    <a href="scrunchies.html">Scrunchies</a>
-    <a href="offers.html">Offers</a>
-    <a href="contact.html">Contact Us</a>
+    <a href="index">Home</a>
+    <a href="bows">Bows</a>
+    <a href="scrunchies">Scrunchies</a>
+    <a href="offers">Offers</a>
+    <a href="contact">Contact Us</a>
   </nav>
 
   <main>
     <h2>Scrunchie Heaven</h2>
     <p>Match your mood and your outfit with our colorful scrunchies!</p>
-    <img src="https://via.placeholder.com/200x150.png?text=Scrunchies" alt="Cute Scrunchies">
+    <img src="https://crownedbyroyalty.co.uk/cdn/shop/articles/a-photo-of-a-variety-of-satin-scrunchies-in-pink-b-7YhkW9u7RMC03CpL_omjUw-CuicvG-JSHK_YorjIe8BGw.jpg?v=1730290258" alt="Cute Scrunchies">
   </main>
 
   <footer>
