@@ -1,48 +1,52 @@
-/* styles.css */
-/* Colors and fonts for the SuruBow website */
-
 body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background-color: #FFF0F5;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-  background-color: #FF69B4;
-  padding: 20px;
-  text-align: center;
-  color: white;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
 }
 
-nav {
-  background-color: #FFDDEE;
-  padding: 10px;
-  text-align: center;
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
 }
 
-nav a {
-  margin: 0 15px;
-  color: #FF1493;
-  text-decoration: none;
-  font-weight: bold;
+nav ul li {
+    display: inline;
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
 }
 
-main {
-  padding: 20px;
-  text-align: center;
+#hero {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 3rem;
+}
+
+#hero h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.btn {
+    background-color: #ff8c00;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
 }
 
 footer {
-  background-color: #FFB6C1;
-  text-align: center;
-  padding: 15px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
