@@ -1,62 +1,48 @@
-/* Basic Reset */
-* {
+/* styles.css */
+/* Colors and fonts for the SuruBow website */
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #FFF0F5;
+  color: #333;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Body and container styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #FF77B7, #FFB6C1); /* Pink gradient background */
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.container {
+header {
+  background-color: #FF69B4;
+  padding: 20px;
   text-align: center;
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
-header h1 {
-  font-size: 3rem;
-  color: #FF1493; /* Bold pink color */
-  margin-bottom: 10px;
+nav {
+  background-color: #FFDDEE;
+  padding: 10px;
+  text-align: center;
 }
 
-header p {
-  font-size: 1.2rem;
-  color: #555;
+nav a {
+  margin: 0 15px;
+  color: #FF1493;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 main {
-  margin-top: 20px;
-}
-
-.coming-soon h2 {
-  font-size: 2.5rem;
-  color: #FF1493;
-  margin-bottom: 15px;
-}
-
-.coming-soon p {
-  font-size: 1.2rem;
-  color: #777;
+  padding: 20px;
+  text-align: center;
 }
 
 footer {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: #888;
-}
-
-footer p {
-  font-style: italic;
+  background-color: #FFB6C1;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
