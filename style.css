@@ -1,13 +1,13 @@
 /* Reset & Fonts */
 * {
-  margin: 0;
-  padding: 0;
+  margin: center;
+  padding: center;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: #fffafc;
+  background- color: #fffafc;
   color: #333;
   line-height: 1.6;
 }
