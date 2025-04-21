@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuruBow - Bows</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SuruBow</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bows.html">Bows</a></li>
+        <li><a href="scrunchies.html">Scrunchies</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="cart-icon"><span id="cart-count">0</span> 🛒</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="featured">
+      <h2>Our Handmade Bows</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/bow1.jpg" alt="Floral Bow">
+          <h3>Floral Bow</h3>
+          <p>₹120</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/bow2.jpg" alt="Classic Pink Bow">
+          <h3>Classic Pink Bow</h3>
+          <p>₹100</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/bow3.jpg" alt="Polka Bow">
+          <h3>Polka Dot Bow</h3>
+          <p>₹130</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Add more bows as needed -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SuruBow. All rights reserved.</p>
+  </footer>
+</body>
+</html>
