@@ -1,19 +1,30 @@
-let cartCount = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  let cartCount = 0;
 
-// Update cart count when an item is added
-const updateCart = () => {
   const cartCountElement = document.getElementById('cart-count');
-  cartCountElement.textContent = cartCount;
-};
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
 
-// Add to cart functionality
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    cartCount++;
-    updateCart();
+  // Update cart display
+  const updateCart = () => {
+    cartCountElement.textContent = cartCount;
+  };
+
+  // Add to cart buttons
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      cartCount++;
+      updateCart();
+    });
   });
-});
 
-// Initialize cart count on page load
-document.addEventListener('DOMContentLoaded', updateCart);
+  // Hamburger menu toggle
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  updateCart(); // Initialize
+});
