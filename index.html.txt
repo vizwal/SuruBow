@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuruBow - Handmade Accessories</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SuruBow</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bows.html">Bows</a></li>
+        <li><a href="scrunchies.html">Scrunchies</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="cart-icon"><span id="cart-count">0</span> 🛒</li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Beautiful Handmade Bows & Scrunchies</h1>
+      <p>Lovingly crafted accessories for every occasion</p>
+      <a href="bows.html" class="btn">Shop Now</a>
+    </div>
+  </header>
+
+  <section class="featured">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/bow1.jpg" alt="Bow 1">
+        <h3>Floral Bow</h3>
+        <p>₹120</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/scrunchie1.jpg" alt="Scrunchie 1">
+        <h3>Velvet Scrunchie</h3>
+        <p>₹80</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- Add more featured products if needed -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SuruBow. All rights reserved.</p>
+  </footer>
+</body>
+</html>
