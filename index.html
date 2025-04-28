@@ -23,8 +23,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 500%;
-      height: 500%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: -1;
     }
@@ -33,18 +33,11 @@
     .navbar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       background: rgba(0, 0, 0, 0.5); /* semi-transparent */
       padding: 10px 20px;
       position: relative;
       z-index: 1;
-    }
-
-    /* Hamburger menu */
-    .menu-icon {
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
     }
 
     /* Website name */
@@ -52,6 +45,14 @@
       color: white;
       font-size: 24px;
       font-weight: bold;
+      margin-right: 20px;
+    }
+
+    /* Hamburger menu */
+    .menu-icon {
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
     }
 
     /* Side Menu */
@@ -101,8 +102,8 @@
 
 <!-- Navigation bar -->
 <div class="navbar">
-  <span class="menu-icon" onclick="openMenu()">&#9776;</span>
   <div class="website-name">SuruBow</div>
+  <span class="menu-icon" onclick="openMenu()">&#9776;</span>
 </div>
 
 <!-- Side menu -->
@@ -126,3 +127,4 @@
 
 </body>
 </html>
+
