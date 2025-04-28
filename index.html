@@ -15,10 +15,10 @@
 
     body, html {
       height: 100%;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
-    /* Background video */
+    /* Background video fully covers screen */
     video#bg-video {
       position: fixed;
       top: 0;
@@ -29,7 +29,6 @@
       z-index: -1;
     }
 
-    /* Header styling */
     header {
       position: fixed;
       top: 0;
@@ -45,7 +44,6 @@
       z-index: 10;
     }
 
-    /* Left Hamburger + Brand */
     .left-header {
       display: flex;
       align-items: center;
@@ -68,7 +66,6 @@
       transform: scale(1.1);
     }
 
-    /* Right Buttons */
     .right-buttons {
       display: flex;
       align-items: center;
@@ -114,7 +111,7 @@
       top: 70px;
       left: 0;
       width: 220px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       display: none;
       flex-direction: column;
       padding: 20px;
@@ -132,6 +129,23 @@
 
     .side-menu a:hover {
       color: #ffd700;
+    }
+
+    /* Show/hide buttons */
+    .menu-btn .open-icon {
+      display: inline;
+    }
+
+    .menu-btn .close-icon {
+      display: none;
+    }
+
+    .menu-open .menu-btn .open-icon {
+      display: none;
+    }
+
+    .menu-open .menu-btn .close-icon {
+      display: inline;
     }
 
     @keyframes slideIn {
@@ -169,10 +183,11 @@
   </video>
 
   <!-- Header -->
-  <header>
+  <header id="header">
     <div class="left-header">
-      <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
+      <div class="menu-btn" onclick="toggleMenu()" id="menuIcon">
+        <i class="fas fa-bars open-icon"></i>
+        <i class="fas fa-times close-icon"></i>
       </div>
       <div class="brand-name">SuruBow</div>
     </div>
@@ -195,14 +210,17 @@
     <a href="#">Contact</a>
   </div>
 
-  <!-- JavaScript for Menu Toggle -->
+  <!-- JavaScript -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('sideMenu');
+      const header = document.getElementById('header');
       if (menu.style.display === 'flex') {
         menu.style.display = 'none';
+        header.classList.remove('menu-open');
       } else {
         menu.style.display = 'flex';
+        header.classList.add('menu-open');
       }
     }
   </script>
