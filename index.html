@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SuruBow</title>
+  <title>SuruBow Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -12,119 +13,157 @@
     }
 
     body, html {
-      width: 100%;
       height: 100%;
+      width: 100%;
       font-family: 'Poppins', sans-serif;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
-    /* Video background */
-    #background-video {
-      position: absolute;
+    /* Background Video */
+    .background-video {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
+      filter: brightness(0.7);
     }
 
-    /* Navbar */
-    .navbar {
+    /* Header */
+    .header {
+      width: 100%;
+      padding: 20px 50px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      background: rgba(0, 0, 0, 0.5); /* semi-transparent */
-      padding: 10px 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Website name */
-    .website-name {
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      margin-right: 20px;
-    }
-
-    /* Hamburger menu */
-    .menu-icon {
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-    }
-
-    /* Side Menu */
-    .side-menu {
-      height: 100%;
-      width: 0;
-      position: fixed;
+      justify-content: space-between;
+      position: absolute;
       top: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-      z-index: 2;
+      z-index: 10;
     }
 
-    .side-menu a {
-      padding: 10px 30px;
-      text-decoration: none;
-      font-size: 22px;
-      color: white;
+    /* Left Header */
+    .left-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .hamburger {
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      margin-right: 20px;
+      transition: 0.4s;
+    }
+
+    .hamburger span {
       display: block;
-      transition: 0.3s;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: 0.4s;
     }
 
-    .side-menu a:hover {
-      background-color: #575757;
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
-    /* Close button */
-    .side-menu .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      font-size: 36px;
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .logo {
+      font-size: 28px;
       color: white;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ff99cc;
+      letter-spacing: 2px;
     }
-  </style>
-</head>
-<body>
 
-<!-- Background video -->
-<video autoplay muted loop id="background-video">
-  <source src="your-video.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+    /* Right Header */
+    .right-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-<!-- Navigation bar -->
-<div class="navbar">
-  <div class="website-name">SuruBow</div>
-  <span class="menu-icon" onclick="openMenu()">&#9776;</span>
-</div>
+    .right-header button {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid white;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+      position: relative;
+      backdrop-filter: blur(5px);
+    }
 
-<!-- Side menu -->
-<div id="sideMenu" class="side-menu">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
-  <a href="#">Home</a>
-  <a href="#">Bows</a>
-  <a href="#">Scrunchies</a>
-  <a href="#">Contact</a>
-</div>
+    .right-header button:hover {
+      background: white;
+      color: #ff69b4;
+    }
 
-<script>
-  function openMenu() {
-    document.getElementById("sideMenu").style.width = "250px";
-  }
+    /* Cart Badge */
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background: #ff69b4;
+      color: white;
+      font-size: 10px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
 
-  function closeMenu() {
-    document.getElementById("sideMenu").style.width = "0";
-  }
-</script>
+    /* Search Box */
+    .search-box {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 60px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 8px 10px;
+      border-radius: 10px;
+      z-index: 15;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      animation: fadeIn 0.5s ease;
+    }
 
-</body>
-</html>
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 5px;
+      width: 200px;
+    }
 
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Menu */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 250px;
+      height: 100%;
+      background: linear-gradient(180deg, #000000, #1a1a1a
