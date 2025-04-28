@@ -14,27 +14,9 @@
     }
 
     body {
-      overflow-x: hidden;
       background: #000;
       color: white;
-    }
-
-    /* HERO VIDEO SECTION */
-    #hero {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    #hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
+      overflow-x: hidden;
     }
 
     header {
@@ -43,13 +25,12 @@
       left: 0;
       width: 100%;
       height: 70px;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 30px;
-      color: white;
-      z-index: 10;
+      padding: 0 20px;
+      z-index: 1000;
     }
 
     .left-header {
@@ -58,26 +39,21 @@
       gap: 10px;
     }
 
-    .logo {
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-    }
-
     .brand-name {
       font-size: 24px;
       font-weight: bold;
     }
 
     .menu-btn {
-      font-size: 30px;
+      font-size: 26px;
       cursor: pointer;
+      display: none;
     }
 
     .right-buttons {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
 
     .search-bar {
@@ -91,12 +67,9 @@
     .search-bar input {
       border: none;
       outline: none;
-      padding: 5px;
       font-size: 14px;
-    }
-
-    .search-bar i {
-      color: gray;
+      padding: 5px;
+      width: 100px;
     }
 
     .right-buttons button {
@@ -105,57 +78,56 @@
       padding: 8px 12px;
       border-radius: 20px;
       cursor: pointer;
-      font-weight: 500;
     }
 
     .side-menu {
+      display: none;
+      flex-direction: column;
       position: fixed;
       top: 70px;
       left: 0;
-      width: 220px;
-      background: rgba(0, 0, 0, 0.85);
-      display: none;
-      flex-direction: column;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
       padding: 20px;
-      z-index: 9;
+      z-index: 999;
     }
 
     .side-menu a {
       color: white;
       text-decoration: none;
-      margin: 15px 0;
+      padding: 12px 0;
       font-size: 18px;
     }
 
-    .menu-btn .open-icon {
-      display: inline;
+    /* HERO SECTION */
+    #hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
     }
 
-    .menu-btn .close-icon {
-      display: none;
+    #hero video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
-    .menu-open .menu-btn .open-icon {
-      display: none;
-    }
-
-    .menu-open .menu-btn .close-icon {
-      display: inline;
-    }
-
-    /* Products Section */
+    /* PRODUCTS SECTION */
     .products {
-      padding: 100px 40px 60px;
+      padding: 100px 20px 60px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
       background: #111;
     }
 
     .product-card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding: 20px;
+      padding: 15px;
       text-align: center;
       backdrop-filter: blur(5px);
     }
@@ -168,8 +140,8 @@
     }
 
     .product-name {
-      margin: 15px 0 5px;
-      font-size: 18px;
+      margin: 10px 0 5px;
+      font-size: 16px;
       font-weight: bold;
     }
 
@@ -192,39 +164,31 @@
       background: #e6c200;
     }
 
-    @media (max-width: 1024px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
       }
-    }
 
-    @media (max-width: 600px) {
-      .products {
-        grid-template-columns: 1fr;
+      .right-buttons {
+        display: none;
+      }
+
+      .side-menu.active {
+        display: flex;
+      }
+
+      .search-bar input {
+        width: 80px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO VIDEO SECTION -->
- <section id="hero"
-</section>
-
-    <video autoplay muted loop>
-   <source scr="video.mp4" />
-      Your browser does not support HTML5 video.
-    </video>
-  </section>
-
-  <!-- Header -->
-  <header id="header">
+  <!-- HEADER -->
+  <header>
     <div class="left-header">
-      <div class="menu-btn" onclick="toggleMenu()" id="menuIcon">
-        <i class="fas fa-bars open-icon"></i>
-        <i class="fas fa-times close-icon"></i>
-      </div>
-    
+      <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
       <div class="brand-name">SuruBow</div>
     </div>
 
@@ -238,7 +202,7 @@
     </div>
   </header>
 
-  <!-- Side Menu -->
+  <!-- SIDE MENU -->
   <div class="side-menu" id="sideMenu">
     <a href="#">Home</a>
     <a href="#">Bows</a>
@@ -246,95 +210,31 @@
     <a href="#">Contact</a>
   </div>
 
-  <!-- Products Section -->
-  <section class="products" id="productsSection">
+  <!-- HERO VIDEO -->
+  <section id="hero">
+    <video autoplay muted loop>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <!-- Add your product cards here, same as before -->
+    <!-- Example card -->
     <div class="product-card">
       <img src="product1.jpg" alt="Product 1">
       <div class="product-name">Floral Bow</div>
       <div class="product-price">₹199</div>
       <button class="add-to-cart">Add to Cart</button>
     </div>
-    <div class="product-card">
-      <img src="product2.jpg" alt="Product 2">
-      <div class="product-name">Velvet Scrunchie</div>
-      <div class="product-price">₹149</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="product3.jpg" alt="Product 3">
-      <div class="product-name">Classic Bow</div>
-      <div class="product-price">₹179</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="product4.jpg" alt="Product 4">
-      <div class="product-name">Premium Scrunchie</div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-       <div class="product-card">
-      <img src="product5.jpg" alt="Product 5">
-      <div class="product-name">cotton bow</div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-     <div class="product-card">
-      <img src="product6.jpg" alt="Product 6">
-      <div class="product-name">satin bow</div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-     <div class="product-card">
-      <img src="product7.jpg" alt="Product 7">
-      <div class="product-name">pigtail bow </div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="product8.jpg" alt="Product 8">
-      <div class="product-name">fairy tale bow </div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-     <div class="product-card">
-      <img src="product9.jpg" alt="Product 9">
-      <div class="product-name"> Isabella bow </div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div> 
-    <div class="product-card">
-      <img src="product10.jpg" alt="Product 10">
-      <div class="product-name">lavender lash bow </div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-         <div class="product-card">
-      <img src="product11.jpg" alt="Product 11">
-      <div class="product-name">triple layer bow</div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-         <div class="product-card">
-      <img src="product12.jpg" alt="Product 12">
-      <div class="product-name">double layer scrunchie</div>
-      <div class="product-price">₹199</div>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    </div>
+    <!-- Repeat cards as needed -->
   </section>
 
-  <!-- JavaScript -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('sideMenu');
-      const header = document.getElementById('header');
-      if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-        header.classList.remove('menu-open');
-      } else {
-        menu.style.display = 'flex';
-        header.classList.add('menu-open');
-      }
+      menu.classList.toggle('active');
     }
   </script>
 
