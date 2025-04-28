@@ -13,18 +13,26 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    body, html {
-      height: 100%;
+    body {
+      overflow-x: hidden;
+      background: #000;
+      color: white;
+    }
+
+    /* HERO VIDEO SECTION */
+    #hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
       overflow: hidden;
     }
 
-    /* Background video fully covers screen */
-    video#bg-video {
-      position: fixed;
+    #hero video {
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: -1;
     }
@@ -47,23 +55,23 @@
     .left-header {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
     }
 
     .brand-name {
       font-size: 24px;
       font-weight: bold;
-      letter-spacing: 1px;
     }
 
     .menu-btn {
       font-size: 30px;
       cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .menu-btn:hover {
-      transform: scale(1.1);
     }
 
     .right-buttons {
@@ -98,14 +106,8 @@
       border-radius: 20px;
       cursor: pointer;
       font-weight: 500;
-      transition: background 0.3s;
     }
 
-    .right-buttons button:hover {
-      background: #f0f0f0;
-    }
-
-    /* Side Menu */
     .side-menu {
       position: fixed;
       top: 70px;
@@ -116,7 +118,6 @@
       flex-direction: column;
       padding: 20px;
       z-index: 9;
-      animation: slideIn 0.3s forwards;
     }
 
     .side-menu a {
@@ -124,14 +125,8 @@
       text-decoration: none;
       margin: 15px 0;
       font-size: 18px;
-      transition: color 0.2s;
     }
 
-    .side-menu a:hover {
-      color: #ffd700;
-    }
-
-    /* Show/hide buttons */
     .menu-btn .open-icon {
       display: inline;
     }
@@ -148,39 +143,77 @@
       display: inline;
     }
 
-    @keyframes slideIn {
-      from {
-        transform: translateX(-100%);
-      }
-      to {
-        transform: translateX(0%);
+    /* Products Section */
+    .products {
+      padding: 100px 40px 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      background: #111;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product-name {
+      margin: 15px 0 5px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .product-price {
+      color: #ffd700;
+      font-weight: 500;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #ffd700;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .add-to-cart:hover {
+      background: #e6c200;
+    }
+
+    @media (max-width: 1024px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-      }
-
-      .right-buttons {
-        margin-top: 10px;
-      }
-
-      .side-menu {
-        width: 100%;
+    @media (max-width: 600px) {
+      .products {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Video -->
-  <video id="bg-video" autoplay muted loop>
-    <source src="your-video.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
+  <!-- HERO VIDEO SECTION -->
+  <section id="hero">
+    <video autoplay muted loop>
+      <source src="your-video.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+  </section>
 
   <!-- Header -->
   <header id="header">
@@ -189,6 +222,7 @@
         <i class="fas fa-bars open-icon"></i>
         <i class="fas fa-times close-icon"></i>
       </div>
+      <img src="logo.png" class="logo" alt="SuruBow Logo" />
       <div class="brand-name">SuruBow</div>
     </div>
 
@@ -209,6 +243,34 @@
     <a href="#">Scrunchies</a>
     <a href="#">Contact</a>
   </div>
+
+  <!-- Products Section -->
+  <section class="products" id="productsSection">
+    <div class="product-card">
+      <img src="product1.jpg" alt="Product 1">
+      <div class="product-name">Floral Bow</div>
+      <div class="product-price">₹199</div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product2.jpg" alt="Product 2">
+      <div class="product-name">Velvet Scrunchie</div>
+      <div class="product-price">₹149</div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product3.jpg" alt="Product 3">
+      <div class="product-name">Classic Bow</div>
+      <div class="product-price">₹179</div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="product4.jpg" alt="Product 4">
+      <div class="product-name">Premium Scrunchie</div>
+      <div class="product-price">₹199</div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </section>
 
   <!-- JavaScript -->
   <script>
